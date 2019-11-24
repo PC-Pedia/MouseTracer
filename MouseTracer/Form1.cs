@@ -15,7 +15,8 @@ namespace MouseTracer
             InitializeComponent();
             timer1.Start();
 
-            _Image = new Bitmap(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
+            Rectangle rec = Screen.PrimaryScreen.Bounds;
+            _Image = new Bitmap(rec.Width, rec.Height);
             _Graphic = Graphics.FromImage(_Image);
             _Graphic.FillRectangle(Brushes.White, 0, 0, _Image.Width, _Image.Height);
 
